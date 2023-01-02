@@ -82,3 +82,53 @@ age = 45;
 age = 'forty five';
 
 //functions
+function add(num1, num2) {
+  return num1 + num2;
+}
+console.log(add(5, 6));
+
+function add1(num1: number, num2: number = 25): number {
+  if (num2) {
+    return num1 + num2;
+  } else return num1;
+}
+console.log(add1(5));
+
+// function add2(num1?: number, num2: number): number {
+//   if (num2) {
+//     return num1 + num2;
+//   } else return num1;
+// }
+// console.log(add2(5));
+
+// optional parameters need to be follow after required parameters
+
+// function fullName(person: { firstName: string; lastName: string })
+
+interface Person {
+  firstName: string;
+  lastName: string;
+}
+function fullName(person: Person) {
+  console.log(`${person.firstName} ${person.lastName}`);
+}
+let p = {
+  firstname: 'ayya',
+  lastname: 'garu',
+};
+
+// fullName(p);
+
+class Employee {
+  employeeName: string;
+  constructor(Name: string) {
+    this.employeeName = Name;
+  }
+  greet() {
+    console.log(`Good Morning ${this.employeeName}`);
+  }
+}
+
+let emp1 = new Employee('subhash');
+console.log(emp1.employeeName);
+emp1.greet();
